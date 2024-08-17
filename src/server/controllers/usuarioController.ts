@@ -24,6 +24,8 @@ export class UsuarioController {
         }
     }
 
+    async getUsuarioByID() {}
+
     async createUsuario(req: Request, res: Response) {
         try {
             const { nome, email, senha } = req.body
@@ -43,4 +45,7 @@ export class UsuarioController {
         }
     }
 
+    async updateUsuario() {}
+
+    async deleteUsuario() {}
 }
