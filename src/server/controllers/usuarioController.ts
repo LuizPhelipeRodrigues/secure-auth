@@ -28,10 +28,11 @@ export class UsuarioController {
 
     async createUsuario(req: Request, res: Response) {
         try {
+            console.log(req.body);
             const { nome, email, senha } = req.body
             const usuario: IUsuario = { nome, email, senha }
-            await service.createUsuario(usuario)
-            return res.status(200)
+            const data = await service.createUsuario(usuario)
+            return res.status(200).json(data)
         } catch (error) {
             const { code } = error;
             const message = Object.entries(erros).find(([key, value]) => {
