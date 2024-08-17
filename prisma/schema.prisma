@@ -10,7 +10,7 @@ datasource db {
 
 model usuario {
   id        String @id
-  nome      String
+  nome      String @unique
   email     String
   senha     String
   permissao String @default("c")
