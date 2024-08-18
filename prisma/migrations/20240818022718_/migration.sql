@@ -4,7 +4,8 @@ CREATE TABLE "usuario" (
     "nome" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "senha" TEXT NOT NULL,
-    "permissao" TEXT NOT NULL DEFAULT 'c'
+    "permissao" TEXT NOT NULL DEFAULT 'c',
+    "ativo" BOOLEAN NOT NULL DEFAULT true
 );
 
 -- CreateIndex

@@ -9,9 +9,10 @@ datasource db {
 }
 
 model usuario {
-  id        String @id
-  nome      String @unique
+  id        String  @id
+  nome      String  @unique
   email     String
   senha     String
-  permissao String @default("c")
+  permissao String  @default("c")
+  ativo     Boolean @default(true)
 }
