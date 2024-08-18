@@ -6,3 +6,6 @@ CREATE TABLE "usuario" (
     "senha" TEXT NOT NULL,
     "permissao" TEXT NOT NULL DEFAULT 'c'
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "usuario_nome_key" ON "usuario"("nome");
