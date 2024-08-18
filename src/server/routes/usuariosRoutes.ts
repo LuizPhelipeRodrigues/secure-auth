@@ -11,6 +11,7 @@ usuariosRoutes
     .put('/usuario/:id', controller.updateUsuario)
     .put('/usuario/senha/:id', controller.updateSenha)
     .put('/usuario/permissao/:id', controller.updatePermissao)
+    .put('/usuario/status/:id', controller.updateStatus)
     .delete('/usuario/:id', controller.deleteUsuario)
 
 export { usuariosRoutes };

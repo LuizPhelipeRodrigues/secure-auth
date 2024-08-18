@@ -50,6 +50,10 @@ export class UsuarioService {
         return data
     }
 
+    async updateStatus(status: boolean, id: string) {
+        const data = await prisma.usuario.update({ where: { id: id }, data: { ativo: status } })
+    }
+
     async deleteUsuario(id: string) {
         const data = await prisma.usuario.delete({ where: { id: id } })
         return data

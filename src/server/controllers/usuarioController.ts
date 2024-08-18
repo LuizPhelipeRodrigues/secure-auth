@@ -119,6 +119,25 @@ export class UsuarioController {
         }
     }
 
+    async updateStatus(req: Request, res: Response) {
+        try {
+            const { id } = req.params
+            const { status } = req.body
+            await service.updateStatus(status, id)
+            return res.status(201).send('Status updated successfully!')
+        } catch (error) {
+            const { code } = error;
+            const message = Object.entries(erros).find(([key, value]) => {
+                if (key === code) {
+                    return value;
+                }
+                return;
+            })?.[1];
+            console.log("PUT request received to updateStatus with error", message);
+            return res.status(500).json({ ...message, code });
+        }
+    }
+
     async deleteUsuario(req: Request, res: Response) {
         try {
             const { id } = req.params
