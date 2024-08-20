@@ -1,6 +1,6 @@
 import { prisma } from '../../prisma/prismaClient'
 import bcryptjs from 'bcryptjs'
-import { sign } from 'jsonwebtoken'
+import jsonwebtoken from 'jsonwebtoken'
 export class AuthService {
   async login(usuario: any) {
     try {
@@ -20,10 +20,10 @@ export class AuthService {
       if (!isValid) {
         throw new Error("As senhas não conferem")
       }
-      const accessToken = sign({ 
+      const accessToken = jsonwebtoken.sign({ 
         id: id, nome: nome
        }, process.env.SECRET_KEY, { 
-        expiresIn: 3000 
+        expiresIn: 30
       })
 
       return { id, nome, accessToken }
